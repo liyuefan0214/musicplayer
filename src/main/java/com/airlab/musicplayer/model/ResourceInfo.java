@@ -107,4 +107,10 @@ public class ResourceInfo extends BaseModel implements IIdAware {
 		this.content = content;
 	}
 
+	@Override
+	public String toString() {
+		return "ResourceInfo{" +
+				"filePath='" + filePath + '\'' +
+				'}';
+	}
 }

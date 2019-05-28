@@ -14,9 +14,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.airlab.musicplayer.model.ResourceInfo;
 import com.airlab.musicplayer.model.Response;
-import com.airlab.musicplayer.model.SessionInfo;
 import com.airlab.musicplayer.service.ResourceInfoService;
-import com.airlab.musicplayer.utils.CookieUtils;
 import com.airlab.musicplayer.utils.LocalSessionManager;
 import com.airlab.musicplayer.utils.StringTools;
 
@@ -54,12 +52,6 @@ public class ResourceController {
 			RequestMethod.GET }, produces = "application/json; charset=utf-8")
 	public @ResponseBody String uploadResource(HttpServletRequest request) {
 		Response rs = new Response();
-//		String sessionId = CookieUtils.getCookieValue(request, ADMIN_USER_COOKIE);
-//		SessionInfo sessionInfo = sessionManager.getSession(sessionId);
-//		if(sessionInfo == null){
-//			rs.setErrcode(110);
-//			return rs.toString();
-//		}
 		ResourceInfo resourceInfo = null;
 		try {
 			List files = ((MultipartHttpServletRequest) request).getFiles("file");

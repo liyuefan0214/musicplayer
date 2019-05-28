@@ -3,9 +3,9 @@ $(function(){
 var audio = document.createElement("audio");
 var music={};
 if(sessionStorage.getItem("history") == undefined||sessionStorage.getItem("history")==null){
-	audio.src="data/yanyuan.mp3";
+	audio.src="data/Tears.mp3";
 	audio.play();
-	showMusicLrc("data/yanyuan.lrc");
+	showMusicLrc("data/lrc.lrc");
 }else{
 	var history = JSON.parse(sessionStorage.getItem("history"));
 	var musicId = history[0];
@@ -27,9 +27,9 @@ function playMusicById(musicId){
     			audio.play();
     			showMusicLrc(data.result.lyricsResourceInfo.filePath);
             }else{
-            	audio.src="data/yanyuan.mp3";
+            	audio.src="data/Tears.mp3";
     			audio.play();
-    			showMusicLrc("data/yanyuan.lrc");
+    			showMusicLrc("data/lrc.lrc");
             }
         }
     });
@@ -119,7 +119,7 @@ function showMusicLrc(lrcPath){
 
 // 推荐列表 播放《演员》 
 $("#yanyuan").on("click", function(){
-	playThisMusic('','演员','data/yanyuan.mp3','/data/yanyuan.irc','薛之谦','dist/img/xuezhiqian.jpg');
+	playThisMusic('','Bluebird','data/Bluebird.mp3','/data/lrc.lrc','伍伍慧','dist/img/gogo.jpg');
 });
 
 });

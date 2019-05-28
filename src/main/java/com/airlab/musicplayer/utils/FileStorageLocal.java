@@ -240,7 +240,8 @@ public class FileStorageLocal {
 
 		String fileRootPathAbsolute = fileRootPath;
 		// // 得到文件全路径
-		return FileTools.combineFileName(fileRootPathAbsolute, fileNameWithPath);
+		String s = FileTools.combineFileName(fileRootPathAbsolute, fileNameWithPath);
+		return s;
 
 	}
 
@@ -264,6 +265,7 @@ public class FileStorageLocal {
 		buffer.append(level_0).append(File.separator).append(level_1).append(File.separator).append(level_2)
 				.append(File.separator).append(level_3).append(File.separator).append(level_4).append(File.separator);
 		String filePath = buffer.toString();
+
 
 		// 得到文件的全路径
 		String fileFullPath = getFullFileName(filePath);

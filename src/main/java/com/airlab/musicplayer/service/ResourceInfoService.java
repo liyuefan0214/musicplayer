@@ -2,6 +2,8 @@ package com.airlab.musicplayer.service;
 
 import com.airlab.musicplayer.model.ResourceInfo;
 
+import java.util.List;
+
 public interface ResourceInfoService {
 	/**
 	 * 增加资源
@@ -46,11 +48,14 @@ public interface ResourceInfoService {
 	
 	/**
 	 * 获取资源
-	 * @param sessionId
-	 * @param resourceId
+	 * @param
 	 * @return ReturnResult<ResourceModel>
 	 */
 	public byte[] getResourceContent(String filePath);
+
+	ResourceInfo deleteFile(long id);
+
+	int deleteResource(long id);
 
 	
 }

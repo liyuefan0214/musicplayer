@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.FilenameUtils;
@@ -57,6 +58,7 @@ public class ResourceInfoServiceImpl implements ResourceInfoService {
 			}
 			resource = saveResource(userId, fileName, mimeType, resourceId, fileContent);
 			try {
+				System.out.println("----------------------" + resource.getFilePath());
 				resourceInfoDao.insert(resource);
 			} catch (org.springframework.dao.DuplicateKeyException e) {
 				resource = resourceInfoDao.selectByResourceId(resourceId);
@@ -100,6 +102,7 @@ public class ResourceInfoServiceImpl implements ResourceInfoService {
 		resource.setFileName(fileName);
 		resource.setSystemFileName(systemFileName);
 		resource.setFilePath(filePath);
+		System.out.println("----------------------" + filePath);
 		resource.setSize(fileContent.length);
 		resource.setMd5(DigestUtils.md5Hex(fileContent));
 
@@ -194,5 +197,16 @@ public class ResourceInfoServiceImpl implements ResourceInfoService {
 			e.printStackTrace();
 		}
 		return fileContent;
+	}
+
+	@Override
+	public ResourceInfo deleteFile(long id) {
+		ResourceInfo resourceInfos = resourceInfoDao.deleteFile(id);
+		return resourceInfos;
+	}
+
+	@Override
+	public int deleteResource(long id) {
+		return resourceInfoDao.deleteResource(id);
 	}
 }

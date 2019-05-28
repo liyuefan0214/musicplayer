@@ -12,6 +12,7 @@ import com.airlab.musicplayer.model.Response;
 import com.airlab.musicplayer.model.musicinfo.Bulletin;
 import com.airlab.musicplayer.service.BulletinService;
 
+//公告
 @Controller
 @RequestMapping("bulletin")
 public class BulletinController {

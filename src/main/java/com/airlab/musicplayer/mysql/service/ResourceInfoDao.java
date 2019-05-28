@@ -60,6 +60,17 @@ public class ResourceInfoDao extends MyBatisDao<ResourceInfo>implements IResourc
 	}
 
 	@Override
+	public ResourceInfo deleteFile(long id) {
+		return this.getSqlSession().selectOne(NAMESPACE+".deleteFile", id);
+	}
+
+	@Override
+	public int deleteResource(long id) {
+		return this.getSqlSession().delete(this.getNameSpace() + ".deleteResource",id);
+	}
+
+
+	@Override
 	public List<ResourceInfo> selectByResourceIdList(List<String> resourceIdList) {
 		Map<String,Object> params = new HashMap<String,Object>();
 		params.put("resourceIdList", resourceIdList);

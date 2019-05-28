@@ -52,6 +52,7 @@
     delete from song
     where id = #{id,jdbcType=BIGINT}
   </delete>
+
   <insert id="insert" parameterType="com.airlab.musicplayer.model.musicinfo.Song" useGeneratedKeys="true" keyProperty="id">
     insert into song (song_name, singer_name, 
       song_type, poster_resource_id, song_resource_id, 

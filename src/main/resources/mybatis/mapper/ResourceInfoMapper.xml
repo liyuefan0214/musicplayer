@@ -133,4 +133,10 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
+    <select id="deleteFile" parameterType="java.lang.Long" resultMap="BaseResultMap" resultType="com.airlab.musicplayer.model.ResourceInfo">
+    select file_path from resource where resource_id in (select song_resource_id from song where id = #{id,jdbcType=BIGINT})
+  </select>
+    <delete id="deleteResource" parameterType="java.lang.Long">
+        DELETE from resource where resource_id in (select song_resource_id from song where id = #{id,jdbcType=BIGINT});
+    </delete>
 </mapper>

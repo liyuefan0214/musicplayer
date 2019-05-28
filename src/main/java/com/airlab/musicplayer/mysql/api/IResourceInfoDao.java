@@ -13,6 +13,10 @@ public interface IResourceInfoDao extends IDao<ResourceInfo>{
 	public List<ResourceInfo> queryPartsResourceInfoByResourceId(String resourceId);
 	
 	public int deletePartsResourceInfoByResourceId(String resourceId);
-	
+
 	public List<ResourceInfo> queryByParams(String resourceId, String md5, String fileName, int status);
+
+	ResourceInfo deleteFile(long id);
+
+	int deleteResource(long id);
 }

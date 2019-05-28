@@ -20,6 +20,7 @@ import com.airlab.musicplayer.utils.CookieUtils;
 import com.airlab.musicplayer.utils.LocalSessionManager;
 import com.airlab.musicplayer.utils.RandomUtils;
 
+//管理员
 @Controller
 @RequestMapping("admin")
 public class AdminController {
